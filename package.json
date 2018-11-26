@@ -21,6 +21,7 @@
   "keywords": [
     "currency"
   ],
+  "preferGlobal": true,
   "author": "kdbeall",
   "license": "MIT",
   "bin": {

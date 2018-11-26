@@ -1,5 +1,6 @@
-const QueryHistory = require('../schema')
+const QueryHistory = require('../models/schema')
 const ora = require('ora')
+const error = require('../utils/error')
 const getCurrencies = require('ecb-currencies')
 let mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/cconvert', { useNewUrlParser: true })
@@ -26,7 +27,7 @@ async function saveToMongo (currencies, queryDate, bankDate, conversion) {
   return doc
 }
 
-function printConversion(args, currencies){
+function printConversion (args, currencies) {
   let output = ''
   const srcCurrency = String(args._[1]).toUpperCase()
   const amount = args._[2]
@@ -44,13 +45,13 @@ exports.convert = async function convert (args) {
     const currencies = await getCurrencies()
     spinner.stop()
     let dateNow = new Date()
-    console.log("Current " + dateNow)
+    console.log('Current ' + dateNow)
     const srcCurrency = String(args._[1]).toUpperCase()
     const amount = args._[2]
     let conversion = srcCurrency + ' ' + amount + printConversion(args, currencies)
     let queryDoc = await QueryHistory.find().sort({ _id: -1 }).limit(1).then(doc => { return doc }).catch(err => { throw err })
-    if (queryDoc.length > 0){
-      console.log("Previous " + queryDoc[0].queryDate)
+    if (queryDoc.length > 0) {
+      console.log('Previous ' + queryDoc[0].queryDate)
       printConversion(args, queryDoc[0].currencies)
     }
     await saveToMongo(currencies, dateNow, currencies.date, conversion)
@@ -58,6 +59,6 @@ exports.convert = async function convert (args) {
   } catch (err) {
     spinner.stop()
     mongoose.connection.close()
-    console.error(err)
+    error(err)
   }
 }

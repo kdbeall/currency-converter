@@ -21,7 +21,7 @@ const menus = {
       cconvert history <n>
       
       n .............. limit the output the last n queries
-      `,
+      `
 
 }
 

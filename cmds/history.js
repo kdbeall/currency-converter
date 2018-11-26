@@ -1,4 +1,5 @@
-const QueryHistory = require('../schema')
+const QueryHistory = require('../models/schema')
+const error = require('../utils/error')
 const ora = require('ora')
 let mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/cconvert', { useNewUrlParser: true })
@@ -15,6 +16,6 @@ exports.history = async function history (args) {
   } catch (err) {
     spinner.stop()
     mongoose.connection.close()
-    console.error(err)
+    error(err)
   }
 }
