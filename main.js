@@ -15,7 +15,7 @@ module.exports = () => {
 
   switch (cmd) {
     case 'convert':
-      require('./cmds/convert')(args)
+      require('./cmds/convert').convert(args)
       break
 
     case 'history':
