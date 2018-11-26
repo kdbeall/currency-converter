@@ -23,12 +23,12 @@ You should now be able to use cconverter from the terminal.
 ## Usage
 cconverter has four commands
 
-convert .............. convert between currencies
-history ............ show conversion history
-version ............ show package version
-help ............... show help menu for a command
+    convert .............. convert between currencies
+    history ............ show conversion history
+    version ............ show package version
+    help ............... show help menu for a command
 
-Use the help menu to learn more about commands.
+Use the help command to learn more about each command.
 
     cconverter help convert
 
@@ -36,8 +36,10 @@ Use the help menu to learn more about commands.
 cconverter uses [standard](https://standardjs.com/) javascript code-style
 [jest] is used as the test-runner.
 
-1. Make sure tests are passing
+1. Make sure tests are passing using
+
     npm test
 
-2. Make sure code is propertly styled
+2. Make sure code is propertly styled using
+
     standard
