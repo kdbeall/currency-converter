@@ -1,13 +1,13 @@
 {
   "name": "cconverter-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Command-line application to convert currencies. Retrieves rates from the European Central Bank.",
   "main": "main.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "jest && standard"
+    "test": "jest --detectOpenHandles && standard"
   },
   "standard": {
     "env": [
@@ -33,6 +33,7 @@
   "dependencies": {
     "ecb-currencies": "0.0.3",
     "minimist": "^1.2.0",
+    "mongoose": "^5.3.13",
     "ora": "^3.0.0"
   },
   "devDependencies": {

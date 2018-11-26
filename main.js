@@ -19,7 +19,7 @@ module.exports = () => {
       break
 
     case 'history':
-      require('./cmds/history')(args)
+      require('./cmds/history').history(args)
       break
 
     case 'version':
