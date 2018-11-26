@@ -5,7 +5,24 @@ const menus = {
       convert .............. convert between currencies
       history ............ show conversion history
       version ............ show package version
-      help ............... show help menu for a command`
+      help ............... show help menu for a command`,
+
+  convert: `
+      cconvert convert <input> <amount> <output_1>...<output_n>
+      
+      input .............. the input currency
+      amount .............. the amount  of the input currency
+      output .............. the output currency
+      
+      Example Usage:
+        cconvert USD 1000 EUR JPY
+      `,
+  history: `
+      cconvert history <n>
+      
+      n .............. limit the output the last n queries
+      `
+
 }
 
 module.exports = (args) => {

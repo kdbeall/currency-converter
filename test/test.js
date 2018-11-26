@@ -39,13 +39,13 @@ let currencyObj = {
 }
 
 test('Convert yen to dollars', () => {
-  expect(Convert.convertCalc(currencyObj.rates, 'JPY', 100, 'USD')).toBe(0.8841444513329201)
+  expect(Convert.convertCalc(currencyObj.rates, 'JPY', 100, 'USD')).toBe('0.88')
 })
 
 test('Convert euros to dollars', () => {
-  expect(Convert.convertCalc(currencyObj.rates, 'EUR', 1, 'USD')).toBe(1.1409)
+  expect(Convert.convertCalc(currencyObj.rates, 'EUR', 1, 'USD')).toBe('1.14')
 })
 
 test('Convert yen to euros', () => {
-  expect(Convert.convertCalc(currencyObj.rates, 'JPY', 100, 'EUR')).toBe(0.7749535027898327)
+  expect(Convert.convertCalc(currencyObj.rates, 'JPY', 100, 'EUR')).toBe('0.77')
 })
